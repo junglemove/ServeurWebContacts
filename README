@@ -1,0 +1,7 @@
+/*
+    Restart http server auto:
+*/
+npm install -g nodemon => the http
+nodemone hello-http.js
+
+les getter/setteur de classe sont inutils car par défaut les élément d'une class JS sont public
