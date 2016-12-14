@@ -3,11 +3,6 @@ const http = require('http');
 const MyRouteur = require('./MyRouteur.js');
 const MyContact = require('./MyContact.js');
 
-let routes = [
-    new MyRouteur("Contact","GET",""),
-    new MyRouteur("Contact","PUT","")
-];
-
 let contactList = [
     new MyContact("Aaaaaa", "AAAAAAA"),
     new MyContact("Bbbbbb", "BBBBBBB"),
@@ -16,6 +11,12 @@ let contactList = [
     new MyContact("Eeeeee", "EEEEEEE")
 ];
 
+let routes = [
+    new MyRouteur("Contact","GET",""),
+    new MyRouteur("Contact","PUT","")
+];
+
+
 
 const server = http.createServer((req, res) => {
 
@@ -23,8 +24,11 @@ const server = http.createServer((req, res) => {
         case "/Contact":
             res.statusCode = 200;
             res.setHeader('Content-Type', 'text/html, charset=utf-8');
-            //res.write('<p><b>HELLO</b></p>');
-            res.end('/Contact');
+            res.write("/Contact");
+            for (let oneContact in contactList) {
+                res.write("<p><b>Name: "+contactList[oneContact].name+"/Address: "+contactList[oneContact].address+"</b></p>");
+            }
+            //res.end('/Contact');
             break;
         case "/Contact/":
 

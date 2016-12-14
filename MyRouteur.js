@@ -3,11 +3,15 @@
  */
 "use strict"
 class MyRouteur {
-    constructor(name, methode, response){
+    constructor(name, methode, route){
         this.url = name || "";
         this.methode = methode || "";
-        this.response = response || "";
+        this.route = route || "";
     }
 };
+
+MyRouteur.prototype.getRoute = function(name, methode){
+
+}
 
 module.exports = MyRouteur;
