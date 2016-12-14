@@ -4,4 +4,4 @@
 npm install -g nodemon => the http
 nodemone hello-http.js
 
-les getter/setteur de classe sont inutils car par défaut les élément d'une class JS sont public
+les getter/setteur de classe sont inutils car par défaut les éléments d'une class JS sont public
